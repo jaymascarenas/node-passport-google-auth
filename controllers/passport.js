@@ -16,7 +16,7 @@ module.exports = () => {
   passport.use(new GoogleStrategy(GOOGLE_CONFIG, callback));
 
   passport.use(
-    new GoogleStrategy(GOOGLE_CONFIG, function(accessToken, refreshToken, profile, cb) {
+    new GoogleStrategy(GOOGLE_CONFIG, (accessToken, refreshToken, profile, cb) => {
       console.log(profile, accessToken);
 
       // use this space to set any DB's with data needed from the users profile
